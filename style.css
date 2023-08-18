@@ -11,7 +11,7 @@
 header{
   background-color: #000;
   position: fixed;
-  top:0;
+  top: 0;
   height: 60px;
   width: 100%;
   z-index: 997;
@@ -123,14 +123,26 @@ nav ul ul li {
   color: #fff;
   transition: all ease-in-out 0.4s;
 }
-.home{
-    height: 100%;
-    overflow: hidden;
-    background-image: url(img/bg-hero.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #000;
+.home {
+    height: auto;
+	background-image: url(img/bg-hero.jpg);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;
 }
+.home::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.9;
+	z-index: -1;
+}
+
 .home-contant{
     display: grid;
     grid-template-columns: auto auto;
@@ -159,7 +171,17 @@ nav ul ul li {
 }
 .home2 img{
     height: 60%;   
+    animation-name: rotate;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    border-radius: 50%;
 }
+@keyframes rotate{
+    from{ transform: rotate(-360deg); }
+    to{ transform: rotate(360deg); }
+}
+
 
 .card-group{
     display: grid;
@@ -222,7 +244,6 @@ nav ul ul li {
 .about-card1{
     height: 70%;
     width: 70%;
-    padding-right: 10px;
 }
 .about-card2{
     height: 50%;
@@ -341,7 +362,7 @@ nav ul ul li {
 .reservation-card2{
     width: 100%;
     background-color: #0F172B;
-    padding: 5%;
+    padding: 10%;
 }
 .reservation-card2 h5{
     font-size: 20px;
@@ -390,7 +411,9 @@ nav ul ul li {
     width: 95%;
     font-size: 20px;
     color: #fff;
-    margin-left: 7%;
+}
+.reservation-container{
+    text-align: center;
 }
 
 .team-group{
@@ -582,6 +605,7 @@ nav ul ul li {
 
 
 .home-contant{
+    height: auto;
     display: grid;
     grid-template-columns: 100%;
 }
@@ -601,10 +625,18 @@ nav ul ul li {
 .home1 .btn2{
     padding: 5px 20px;
 }
+.home2-img img{
+    height: 100%;
+    width: 90%;
+}
+.home2-container{
+    text-align: center;
+}
 
 
 .card-group{
     height: auto;
+    margin-top: 100%;
     display: grid;
     grid-template-columns: auto;
     margin: 5%;
